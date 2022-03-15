@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar , Container , Nav , NavItem , NavLink} from 'react-bootstrap';
+import CartWidget from './CartWidget';
 
 const NavBar = () =>{
 return (
@@ -20,9 +21,16 @@ return (
       </NavItem>
 
       <NavItem>
-      <NavLink variant="light" href="#contacto">Contacto</NavLink>
+      <NavLink variant="light" href="#nosotros">Nosotros</NavLink>
       </NavItem>
 
+
+      <NavItem>
+      <NavLink variant="light" href="#contacto">Contacto</NavLink>
+      </NavItem>
+      <NavItem>
+      <NavLink><CartWidget /></NavLink>
+       </NavItem>
       </Nav>
     </Container>
   </Navbar>
