@@ -5,10 +5,10 @@ import { faCircleMinus,faCirclePlus} from '@fortawesome/free-solid-svg-icons'
 import {Button , ButtonGroup , Card}  from 'react-bootstrap';
 import {useState} from 'react';
 
-let stock = 9;
 
-const ItemCount = () =>{
 
+const ItemCount = (props) =>{
+let stock = this.props.stock;
 let [contador, setContador] = useState(0);
  
 const click = (tipo,stock) =>{
@@ -19,10 +19,8 @@ const click = (tipo,stock) =>{
      }
     }
 return (
-<Card className="col-md-6 offset-2">
+<Card className="col-md-5 container-fluid">
 <Card.Body>
-    <Card.Title>Producto</Card.Title>
-    <Card.Text>Stock de Producto: {stock}</Card.Text>
 <ButtonGroup aria-label="grupoBtn">
   <Button variant="outline-secondary" onClick={() => click('resta')}><FontAwesomeIcon icon={faCircleMinus} /></Button>{' '}
   <Button variant="outline-secondary" disabled>{contador}</Button>{' '}

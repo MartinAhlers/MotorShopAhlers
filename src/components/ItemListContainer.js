@@ -1,13 +1,23 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemCount from './ItemCount';
+import ItemList from './ItemList';
 
-const ItemListContainer = ({title , content}) =>{
+
+
+let productosArray = [];
+fetch("productos.json")
+  .then((response) => response.json())
+    .then((data) => {
+      productosArray = data;
+      });
+      
+
+const ItemListContainer = () =>{
     return ( 
-   <> <p className="col-md-6 offset-3">{title}
-          <br/>  {content}</p>
-     <p className="col-md-4 offset-3"> <ItemCount  /></p>
-         
+   <> <div className="col-md-6 offset-3">
+     <ItemList {...productosArray}/>
+   </div>
+     
    </> )
 
 };
