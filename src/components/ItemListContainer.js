@@ -1,21 +1,42 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemList from './ItemList';
+import ItemList from './ItemList.js';
+import { useEffect, useState } from "react";
+import { pedirDatos } from "./helpers/data";
+import { useParams } from 'react-router-dom';
+
+
+export const ItemListContainer = () => {
+
+  const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(false)
+    const { catId } = useParams()
+
+    useEffect( () => {
+        setLoading(true)
+
+        pedirDatos()
+            .then((res) => {
+                if (catId) {
+                    setProductos( res.filter((el) => el.categoria === catId ) )
+                } else {
+                    setProductos(res)
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+            .finally(() => {
+               setLoading(false)
+            })
+  }, [catId])
 
 
 
-let productosArray = [];
-fetch("productos.json")
-  .then((response) => response.json())
-    .then((data) => {
-      productosArray = data;
-      });
-      
 
-const ItemListContainer = () =>{
     return ( 
-   <> <div className="col-md-6 offset-3">
-     <ItemList {...productosArray}/>
+   <> <div className="col-md-9 offset-2">
+     { loading  ? <h2>Cargando Contenido..</h2>  : <ItemList productos={productos}/>} 
    </div>
      
    </> )

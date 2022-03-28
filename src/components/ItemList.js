@@ -1,18 +1,19 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Item from './Item';
+import { Item } from "./Item"
 
 
 
-const ItemList = ({props}) => {
- 
-    return ( 
-    <>
-        {props.map(prod => (
-     <Item key={prod.id} {...props} />
-))}
-</>
-        )
-};
+export const ItemList = ( {productos} ) => {
 
+    return (
+          <>
+            <h2>Productos</h2>   
+            <hr/>
+            <div className="row">
+                { productos.map( (el) => <Item key={el.id} {...el}/> )}
+            </div> 
+            </>
+    )
+}
 export default ItemList;
