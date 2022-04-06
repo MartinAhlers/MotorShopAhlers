@@ -22,9 +22,7 @@ let [contador, setContador] = useState(1);
   }
  }
 
-const handleAdd = () =>{
-  console.log(`Se Agrego al Carrito ${contador} productos`);
-}
+
 
 
 
@@ -38,7 +36,6 @@ return (
   <Button variant="outline-secondary" disabled>{contador}</Button>{' '}
   <Button variant="outline-secondary" onClick={handleSuma}><FontAwesomeIcon icon={faCirclePlus} /></Button>{' '}
 </ButtonGroup>
- <Button style={{margin:'1rem'}} onClick={handleAdd} >Agregar</Button>
  </Card.Body>
 </Card>
      )

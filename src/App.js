@@ -9,10 +9,13 @@ import Nosotros from './components/Nosotros';
 import Contacto from './components/Contacto';
 import Home from './components/Home';
 import Footer from './components/Footer';
+import { CartProvider } from './components/CartContext';
+import { Cart } from "./components/Cart";
 
 function App() {
   return (
     <>
+    <CartProvider>
   <BrowserRouter>
   <NavBar />
    <Routes>
@@ -21,12 +24,14 @@ function App() {
             <Route path='/detail/:itemId' element={ <ItemDetailContainer/> }/>
             <Route path="/nosotros" element={ <Nosotros /> } />
             <Route path="/contacto" element={ <Contacto /> } />
+            <Route path='/cart' element={ <Cart/> } />
 
             {/* <Route path='/404' element={ <Error404/> }/> */}
             <Route path='*' element={ <Navigate to='/'/> }/>
           </Routes>
           <Footer/>
           </BrowserRouter>
+          </CartProvider>
           </>
   )
 };
