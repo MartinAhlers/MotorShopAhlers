@@ -1,4 +1,4 @@
-import { React, useContext, useState } from "react"
+import React,{  useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "./CartContext"
 import ItemCount from './ItemCount';
@@ -25,7 +25,7 @@ export const ItemDetail = ({id, title, img, desc, price, stock, categoria}) => {
         <>
         <Container>
             <Row>
-        <div className="col-md-6 col-sm-12"><img src={img} alt={title}style={{width:'30rem',height:'30rem'}}/></div>
+        <div className="col-md-6 col-sm-12"style={{width:'30rem',height:'30rem',margin:'15px'}}><img src={img} alt={title}style={{maxWidth:'30rem',maxHeight:'30rem'}}/></div>
         <div className="col-md-6 col-sm-12 ">
             <h1>{title}</h1>
             <p>{desc}</p>
@@ -39,13 +39,14 @@ export const ItemDetail = ({id, title, img, desc, price, stock, categoria}) => {
                     <>
                         <ItemCount 
                             stock={stock} 
-                            counter={cantidad} 
-                            setCounter={setCantidad}
+                            contador={cantidad} 
+                            setContador={setCantidad}
                         />
 
                         <button
                             className="btn btn-success my-2"            
                             onClick={handleAgregar}
+                            disabled={cantidad === 0}
                         >
                             Agregar al carrito
                         </button>

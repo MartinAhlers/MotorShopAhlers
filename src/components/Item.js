@@ -7,7 +7,7 @@ export const Item = ( {id, title, price, img, desc, stock} ) => {
 
     return (
         <Card style={{ width: '16rem', padding:'2rem',margin:'2rem'}}>
-            <Card.Img variant="top" src={img} />
+            <Card.Img variant="top" src={img} style={{maxWidth: '200px',maxHeight:'250px'}} />
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>

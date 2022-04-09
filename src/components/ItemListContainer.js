@@ -2,7 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemList from './ItemList.js';
 import { useEffect, useState } from "react";
-import { pedirDatos } from "./helpers/data";
+import { db } from "./firebase/config";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { useParams } from 'react-router-dom';
 
 
@@ -15,20 +16,22 @@ export const ItemListContainer = () => {
     useEffect( () => {
         setLoading(true)
 
-        pedirDatos()
-            .then((res) => {
-                if (catId) {
-                    setProductos( res.filter((el) => el.categoria === catId ) )
-                } else {
-                    setProductos(res)
-                }
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-            .finally(() => {
+
+       const productosRef = collection(db, 'productos')
+       const q = catId ? query(productosRef, where("categoria", "==", catId)) : productosRef
+
+       getDocs(q)
+           .then((resp) => {
+               setProductos( resp.docs.map((doc) => {
+                   return {
+                       id: doc.id,
+                       ...doc.data()
+                   }
+               }))
+           })
+           .finally(() => {
                setLoading(false)
-            })
+           })
   }, [catId])
 
 

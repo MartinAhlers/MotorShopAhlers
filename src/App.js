@@ -15,6 +15,7 @@ import { Cart } from "./components/Cart";
 function App() {
   return (
     <>
+    <div className='d-flex flex-column min-vh-100'>
     <CartProvider>
   <BrowserRouter>
   <NavBar />
@@ -32,6 +33,7 @@ function App() {
           <Footer/>
           </BrowserRouter>
           </CartProvider>
+          </div>
           </>
   )
 };

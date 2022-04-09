@@ -3,13 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleMinus,faCirclePlus} from '@fortawesome/free-solid-svg-icons'
 import {Button , ButtonGroup , Card}  from 'react-bootstrap';
-import {useState} from 'react';
 
 
 
-const ItemCount = ({stock}) =>{
 
-let [contador, setContador] = useState(1);
+const ItemCount = ({stock ,contador, setContador}) =>{
+
+
 
  const handleResta = () =>{
    if (contador>1){
