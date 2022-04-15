@@ -1,6 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Card } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import {Link} from 'react-router-dom';
 
 export const Item = ( {id, title, price, img, desc, stock} ) => {
@@ -11,16 +13,10 @@ export const Item = ( {id, title, price, img, desc, stock} ) => {
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>
-                    {desc}
-                </Card.Text>
-                <Card.Text>
-                    Precio: ${price}
-                </Card.Text>
-                <Card.Text>
-                    Stock: {stock}
+                   <h1>${price}</h1>
                 </Card.Text>
                 <Link to={`/detail/${id}`}>
-                    <Button variant="info btn-lg">Ver más</Button>
+                <Button variant="success btn-lg"><FontAwesomeIcon icon={faBasketShopping} style={{marginRight:'5px'}} />Comprar</Button>
                 </Link>
             </Card.Body>
         </Card>
