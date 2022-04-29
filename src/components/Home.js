@@ -1,22 +1,47 @@
 import React from 'react';
-
+import Carousel from 'react-bootstrap/Carousel';
 export const Home = () => {
 
   return <div className='container'>
-      <h2>Home</h2>
-      <hr/>
-      <h3 className="col-6 offset-4">Pagina de Inicio Motor Shop </h3>
-      <hr/>
-      <p> Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare ligula id aptent imperdiet curabitur, feugiat nulla nibh viverra congue at. Commodo cras non fermentum senectus lacinia nibh sapien, praesent sociosqu cubilia elementum himenaeos nisi quam, ante vehicula velit feugiat diam aenean. Iaculis vel convallis ut diam mi cum quis consequat scelerisque per, laoreet at ligula duis mattis praesent mus integer netus.
+    
+      <h3 className="col-6 offset-4">Bienvenido a Motor Shop </h3>
+      <Carousel>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="https://firebasestorage.googleapis.com/v0/b/motorshop-ahlers.appspot.com/o/Slider-PX70.jpg?alt=media&token=471978d0-6d4e-4631-b419-d32ec2f82141"
+      alt="Motos Shop"
+    />
+    <Carousel.Caption>
+      <h3 class="text-white bg-dark">Motos Shop</h3>
+      <p class="text-white bg-dark">Las mejores ofertas del país.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="https://firebasestorage.googleapis.com/v0/b/motorshop-ahlers.appspot.com/o/Slider-MOTO-YUMBO-SK200-1440x700-2.jpg?alt=media&token=2117464a-4c05-4dee-89dc-8af30e4644ea"
+      alt="Second slide"
+    />
 
-Diam eget sodales fusce lacinia justo facilisi nascetur eleifend auctor, libero magnis tempor himenaeos nostra aliquet phasellus vel venenatis, nullam morbi tortor per donec molestie quam porttitor. Etiam hendrerit suscipit molestie nulla pellentesque sollicitudin eleifend habitasse, dapibus ultricies tincidunt taciti nam risus enim, pulvinar conubia auctor vitae est fermentum tellus. Auctor platea accumsan eget cum quisque tempor consequat cras porta sollicitudin aptent pellentesque, viverra habitant bibendum rutrum tempus a sociis tortor donec faucibus. Vehicula litora facilisis cubilia suscipit libero senectus interdum vitae facilisi himenaeos, bibendum fames magna potenti pulvinar lobortis nam torquent pretium imperdiet, cursus posuere nibh per molestie lacus fusce ullamcorper aliquet.
+    <Carousel.Caption>
+      <h3 class="text-white bg-dark">Yumbo SK200</h3>
+      <p class="text-white bg-dark">Nuevos Lanzamientos 2022</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="https://firebasestorage.googleapis.com/v0/b/motorshop-ahlers.appspot.com/o/Slider-e-yumbo-dic21.jpg?alt=media&token=5d51ccaf-61ee-4943-b99a-c64db2f2a8d5"
+      alt="electric"
+    />
 
-Cursus ullamcorper ligula etiam integerfacilisi nascetur eleifend auctor, libero magnis tempor himenaeos nostra aliquet phasellus vel venenatis, nullam morbi tortor per donec molestie quam porttitor. Etiam hendrerit suscipit molestie nulla pellentesque sollicitudin eleifend habitasse, dapibus ultricies tincidunt taciti nam risus enim, pulvinar conubia auctor vitae est fermentum tellus. Auctor platea accumsan eget cum quisque tempor consequat cras porta sollicitudin aptent pellentesque, viverra habitant bibendum rutrum tempus a sociis tortor donec faucibus. Vehicula litora facilisis cubilia suscipit libero senectus interdum vitae facilisi himenaeos, bibendum fames magna potenti pulvinar lobortis nam torquent pretium imperdiet, cursus posuere nibh per molestie lacus fusce ullamcorper aliquet.
-
-lis enim bibendum nascetur risus, aliquet nulla nostra tempor felis. Rhoncus odio volutpat nostra porttitor metus ligula natoque interdum fusce, nec varius magnis vehicula viverra cubilia consequat vitae, nibh leo dignissim dictumst donec erat conubia penatibus. Ut inceptos penatibus condimentum elementum fames nibh non semper, commodo viverra suspendisse augue proin egestas leo, tellus felis rhoncus hac sodales sociosqu morbi.
-
-Dignissim lacinia nrttitor, purus quam phasellus pellentesque fusce magnis pulvinar, vel enim tincidunt vehicula ridiculus. Non aliquet hendrerit facilisi torquent hac mollis himenaeos arcu, fusce mattis sollicitudin ultricies cubilia dis egestas. Cursus conubia non litora vehicula risus arcu himenaeos pellentesque tellus venenatis mauris nisl metus, facilisis sagittis morbi nascetur dignissim parturient ac natoque vivamus magnis cum. </p>
-      <hr/>
+    <Carousel.Caption>
+      <h3 class="text-white bg-dark">Modelos Electricos</h3>
+      <p class="text-white bg-dark">Los mejores precios en vehiculos electricos.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>
   </div>;
 };
 
